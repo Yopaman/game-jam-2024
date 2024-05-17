@@ -1,23 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://xpcsgfg1n2yf"]
+[gd_scene load_steps=5 format=3 uid="uid://xpcsgfg1n2yf"]
 
 [ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://Scenes/Player.tscn" id="1_b5bxb"]
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tlih8"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dx1hv"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0cu6c"]
+
 [node name="Game" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_b5bxb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53349, 0)
-
 [node name="Water" type="StaticBody3D" parent="."]
+transform = Transform3D(3.54353, 0, 0, 0, 0.993208, 0, 0, 0, 2.84014, -0.00258636, 0.0417137, -12.4604)
 
 [node name="shape" type="MeshInstance3D" parent="Water"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 6.85637, 0.00802505, 0, 0.0033412)
 mesh = SubResource("PlaneMesh_dx1hv")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_0cu6c")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.980509, 0.196477, 0, -0.196477, 0.980509, -0.0992771, 2.20893, 3.40661)
+[node name="Sprite3D" type="Sprite3D" parent="Water"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.150019, 0.988683, 0, -0.988683, 0.150019, -2.84277, 6.50559, -0.4045)
+
+[node name="Player" parent="." instance=ExtResource("1_b5bxb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.08274, -2.38419e-07)
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(0.999998, 0.00174533, 0, -0.00144181, 0.826097, 0.563526, 0.000983538, -0.563525, 0.826098, 0, 3.238, 6.066)
+current = true
+script = ExtResource("1_tlih8")
+player = NodePath("../Player")

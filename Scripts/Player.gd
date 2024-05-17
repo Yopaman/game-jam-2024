@@ -4,6 +4,8 @@ extends RigidBody3D
 @export var water_drag := 0.05
 @export var water_angular_drag := 0.05
 
+@export var lane_index := 0
+
 @onready var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var submerged := false
@@ -17,10 +19,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	Camera3D
 	
 func _physics_process(delta):
 	submerged = false
+	global_position.z += -0.05
 	var depth := water_height - global_position.y
 	if depth > 0:
 		submerged = true
