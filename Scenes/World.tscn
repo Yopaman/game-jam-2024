@@ -14,7 +14,7 @@
 transform = Transform3D(3.54353, 0, 0, 0, 0.993208, 0, 0, 0, 2.84014, -0.00258636, 0.0417137, -12.4604)
 
 [node name="shape" type="MeshInstance3D" parent="Water"]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 12, 0.861097, 0, -0.0139337)
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 12, 0.436, 0, -0.096)
 mesh = SubResource("PlaneMesh_dx1hv")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_0cu6c")
@@ -34,10 +34,10 @@ script = ExtResource("1_tlih8")
 player = NodePath("../Player")
 
 [node name="Node3D" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4183, 0, -5.86934)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39023, 0, -5.86934)
 
 [node name="Node3D2" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70406, 0, -5.53962)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56062, 0, -5.53962)
 
 [node name="Node3D3" parent="." instance=ExtResource("3_h8t28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.36792, -48.3041, -66.6177)
@@ -55,10 +55,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64024, 0, -20.9825)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73814, 0, -16.964)
 
 [node name="Node3D8" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54366, 0, -8.05107)
 
 [node name="Node3D9" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44912, 0, -8)
 
 [node name="Node3D10" parent="." instance=ExtResource("3_h8t28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)

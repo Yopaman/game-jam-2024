@@ -16,3 +16,7 @@ mesh = SubResource("SphereMesh_baf0a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_fykuo")
+
+[node name="HitTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
