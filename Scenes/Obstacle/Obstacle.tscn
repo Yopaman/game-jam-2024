@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3ygqpejryuyd"]
+
+[ext_resource type="Script" path="res://Scripts/Obstacle.gd" id="1_n3105"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lqe02"]
+
+[node name="ObstacleArea" type="Area3D"]
+script = ExtResource("1_n3105")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_lqe02")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

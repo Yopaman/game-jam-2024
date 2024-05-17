@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg1wor2lirncs"]
+
+[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_estux"]
+albedo_color = Color(0.141176, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lie82"]
+material = SubResource("StandardMaterial3D_estux")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ObstacleArea" parent="." instance=ExtResource("1_jid1t")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObstacleArea"]
+transform = Transform3D(0.999857, 0, 0.0169289, 0, 1, 0, -0.0169289, 0, 0.999857, 0, 0, 0)
+mesh = SubResource("SphereMesh_lie82")

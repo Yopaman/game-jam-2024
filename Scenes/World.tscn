@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://xpcsgfg1n2yf"]
+[gd_scene load_steps=6 format=3 uid="uid://xpcsgfg1n2yf"]
 
-[ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://Scenes/Player.tscn" id="1_b5bxb"]
+[ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://scenes/Player.tscn" id="1_b5bxb"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tlih8"]
+[ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dx1hv"]
 
@@ -13,7 +14,7 @@
 transform = Transform3D(3.54353, 0, 0, 0, 0.993208, 0, 0, 0, 2.84014, -0.00258636, 0.0417137, -12.4604)
 
 [node name="shape" type="MeshInstance3D" parent="Water"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 6.85637, 0.00802505, 0, 0.0033412)
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 6.85637, 0.00802505, 0, -0.0139337)
 mesh = SubResource("PlaneMesh_dx1hv")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_0cu6c")
@@ -31,3 +32,33 @@ transform = Transform3D(0.999998, 0.00174533, 0, -0.00144181, 0.826097, 0.563526
 current = true
 script = ExtResource("1_tlih8")
 player = NodePath("../Player")
+
+[node name="Node3D" parent="." instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4183, 0, -5.86934)
+
+[node name="Node3D2" parent="." instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70406, 0, -5.53962)
+
+[node name="Node3D3" parent="." instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.36792, -48.3041, -66.6177)
+
+[node name="Node3D4" parent="." instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.881074, 0, -11.2909)
+
+[node name="Node3D5" parent="." instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35318, 0, -16.0041)
+
+[node name="Node3D6" parent="." instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64024, 0, -20.9825)
+
+[node name="Node3D7" parent="." instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73814, 0, -16.964)
+
+[node name="Node3D8" parent="." instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Node3D9" parent="." instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Node3D10" parent="." instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
