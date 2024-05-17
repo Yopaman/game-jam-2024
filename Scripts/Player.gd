@@ -41,6 +41,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	if submerged:
 		state.linear_velocity *=  1 - water_drag
 		#state.angular_velocity *= 1 - water_angular_drag 
+
+func on_Obstacle_hit():
+	print("test2 ?")
 		
 func switch_lane(dir):
 	lane_index += dir

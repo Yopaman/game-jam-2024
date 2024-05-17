@@ -12,5 +12,4 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print("uwu")
-	pass # Replace with function body.
+	body.on_Obstacle_hit()
