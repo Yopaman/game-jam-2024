@@ -10,3 +10,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	global_transform.origin.z = player.global_position.z + 3
+	global_transform.origin.x = player.global_position.x
