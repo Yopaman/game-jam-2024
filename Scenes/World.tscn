@@ -10,7 +10,7 @@
 [ext_resource type="Shader" path="res://addons/simplegrasstextured/shaders/grass.gdshader" id="6_4ce7y"]
 [ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="7_ju3a1"]
 [ext_resource type="Script" path="res://addons/simplegrasstextured/grass.gd" id="8_r3bwc"]
-[ext_resource type="PackedScene" uid="uid://yaqyp2osckur" path="res://Scenes/sol_marin.gltf" id="11_7e5c8"]
+[ext_resource type="PackedScene" uid="uid://bf0yj0mi5wggu" path="res://Models/sol_marin.tscn" id="11_bkmwk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0q4da"]
 transparency = 1
@@ -22,7 +22,7 @@ material = SubResource("StandardMaterial3D_0q4da")
 
 [sub_resource type="BoxMesh" id="BoxMesh_uykv1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnptu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jigkf"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("6_4ce7y")
@@ -57,7 +57,7 @@ _surfaces = [{
 "format": 34359742495,
 "index_count": 12,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 5, 0, 4, 0),
-"material": SubResource("ShaderMaterial_vnptu"),
+"material": SubResource("ShaderMaterial_jigkf"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
@@ -139,7 +139,7 @@ skeleton = NodePath("../..")
 [node name="Obstacles" type="Node" parent="Monde"]
 
 [node name="Ours" parent="Monde/Obstacles" instance=ExtResource("5_8rtyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.93153, 0.2973, -19.3289)
+transform = Transform3D(0.997916, 0, 0, 0, 0.997916, 0, 0, 0, 0.997916, 7.93153, 0.2973, -19.3289)
 
 [node name="Node3D" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32.8351)
@@ -168,5 +168,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.2948)
 [node name="Arbre" parent="Monde/Obstacles" instance=ExtResource("4_voo23")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48766, -0.0339565, -12.3812)
 
-[node name="Root Scene" parent="." instance=ExtResource("11_7e5c8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4785, 0.746003, 27.6196)
+[node name="Root Scene" parent="." instance=ExtResource("11_bkmwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.30503, -2, 0)
