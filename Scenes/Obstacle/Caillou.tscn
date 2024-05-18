@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dg1wor2lirncs"]
 
-[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
+[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://Scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
 [ext_resource type="Texture2D" uid="uid://bo4th2oq72i8m" path="res://Textures/caillou1.png" id="2_16ou7"]
 
 [node name="Node3D" type="Node3D"]
