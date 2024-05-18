@@ -60,6 +60,8 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 func on_Obstacle_hit():
 	speed = hit_speed
 	$HitTimer.start()
+	
+
 		
 func switch_lane(dir):
 	lane_index += dir

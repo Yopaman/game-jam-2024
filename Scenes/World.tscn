@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://xpcsgfg1n2yf"]
+[gd_scene load_steps=18 format=3 uid="uid://xpcsgfg1n2yf"]
 
+[ext_resource type="Script" path="res://Scripts/World.gd" id="1_0rswd"]
 [ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://Scenes/Player.tscn" id="1_b5bxb"]
 [ext_resource type="Material" uid="uid://dn3djh7xtflab" path="res://Shaders/water.tres" id="1_hiyjm"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tlih8"]
@@ -72,6 +73,7 @@ buffer = PackedFloat32Array(0.709518, 0, 0.704687, -8.54225, 0, 1, 0, -1.54982, 
 size = Vector3(0.975, 0.8, 1.11)
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_0rswd")
 
 [node name="water" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.20118, 0, 0, 0, 1.73811, 0, 0, 0, 34.0817, 1.54239, 0.0417137, -12.7331)
