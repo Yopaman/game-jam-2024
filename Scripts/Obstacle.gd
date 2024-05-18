@@ -9,5 +9,5 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
-	body.on_Obstacle_hit()
-	print("test")
+	if body.is_in_group("player"):
+		body.on_Obstacle_hit()
