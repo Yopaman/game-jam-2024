@@ -1,18 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://xpcsgfg1n2yf"]
+[gd_scene load_steps=10 format=3 uid="uid://xpcsgfg1n2yf"]
 
-[ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://scenes/Player.tscn" id="1_b5bxb"]
+[ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://Scenes/Player.tscn" id="1_b5bxb"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tlih8"]
-[ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
-[ext_resource type="PackedScene" uid="uid://dr0sk2g6ci8ds" path="res://scenes/Obstacle/Arbre.tscn" id="4_voo23"]
+[ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://Scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
+[ext_resource type="PackedScene" uid="uid://dr0sk2g6ci8ds" path="res://Scenes/Obstacle/Arbre.tscn" id="4_voo23"]
+[ext_resource type="PackedScene" uid="uid://b2g8trjiefa5j" path="res://Scenes/Obstacle/Ours.tscn" id="5_8rtyn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0q4da"]
 transparency = 1
 albedo_color = Color(0, 0.211765, 0.662745, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dx1hv"]
+lightmap_size_hint = Vector2i(12, 12)
 material = SubResource("StandardMaterial3D_0q4da")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0cu6c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uykv1"]
 
 [node name="Game" type="Node3D"]
 
@@ -46,9 +50,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -11.291)
 [node name="Node3D5" parent="." instance=ExtResource("3_h8t28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.0041)
 
-[node name="Node3D6" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -20.983)
-
 [node name="Node3D7" parent="." instance=ExtResource("3_h8t28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -18.335)
 
@@ -64,8 +65,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.2948)
 [node name="Arbre" parent="." instance=ExtResource("4_voo23")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48766, -0.0339565, -12.3812)
 
-[node name="Node3D3" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -8)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.70651, 0, 0, 0, 98.6319, -4.834, 0.025856, 0)
+mesh = SubResource("BoxMesh_uykv1")
 
-[node name="Node3D11" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -1.40851, -16)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.70651, 0, 0, 0, 98.6319, 8.12508, 0.0779028, -0.0243816)
+mesh = SubResource("BoxMesh_uykv1")
+
+[node name="Ours" parent="." instance=ExtResource("5_8rtyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.90088, 0.972118, -19.3427)
