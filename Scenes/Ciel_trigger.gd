@@ -1,12 +1,19 @@
-extends Node3D
+extends Area3D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-	# $water.get_surface_override_material(0).set_shader_parameter("albedo",Vector3(1,0,0))
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+
+func _on_body_entered(body):
+	print("uwu")
+	if body.is_in_group("player"):
+		body.ciel()
 

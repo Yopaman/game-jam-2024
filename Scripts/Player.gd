@@ -10,6 +10,7 @@ extends RigidBody3D
 
 @onready var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var in_ciel := false
 var speed = normal_speed
 var submerged := false
 var diving := false
@@ -41,19 +42,23 @@ func _physics_process(delta):
 	$saumon_v03_hi2.rotation.x = -linear_velocity.y * 0.1 
 
 	submerged = false
-	global_position.z += -5 * speed * delta
-	var depth := water_height - global_position.y
-	if depth > 0:
-		submerged = true
-		apply_central_force(Vector3.UP * float_force * gravity * depth)
-	if diving:
-		#linear_velocity.y = 0.0
-		apply_central_force(Vector3.DOWN * dive_force)
-		diving = false
-	if depth < -1 or depth > 1:
-		can_dive = false
+	if not in_ciel:
+		global_position.z += -5 * speed * delta
+		var depth := water_height - global_position.y
+		if depth > 0:
+			submerged = true
+			apply_central_force(Vector3.UP * float_force * gravity * depth)
+		if diving:
+			#linear_velocity.y = 0.0
+			apply_central_force(Vector3.DOWN * dive_force)
+			diving = false
+		if depth < -1 or depth > 1:
+			can_dive = false
+		else:
+			can_dive = true
 	else:
-		can_dive = true
+		#global_position.y += 5 * speed * delta
+		linear_velocity.y = 5
 		
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	if submerged:
@@ -80,3 +85,7 @@ func _on_hit_timer_timeout():
 	
 func game_over():
 	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+	
+func ciel():
+	in_ciel = true
+	

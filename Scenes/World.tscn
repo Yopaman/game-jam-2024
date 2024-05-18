@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://xpcsgfg1n2yf"]
+[gd_scene load_steps=17 format=3 uid="uid://xpcsgfg1n2yf"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_0rswd"]
 [ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://scenes/Player.tscn" id="1_b5bxb"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://8j44iv7b4r3u" path="res://Models/sol_texture.tscn" id="9_lfakd"]
 [ext_resource type="PackedScene" uid="uid://dmppi7xcocwm2" path="res://scenes/transition.tscn" id="11_6aagp"]
 [ext_resource type="PackedScene" uid="uid://bf0yj0mi5wggu" path="res://Models/sol_marin.tscn" id="11_bkmwk"]
+[ext_resource type="Script" path="res://scenes/Ciel_trigger.gd" id="13_fnw0q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0q4da"]
 transparency = 1
@@ -20,6 +21,9 @@ albedo_color = Color(0, 0.211765, 0.662745, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_dx1hv"]
 lightmap_size_hint = Vector2i(12, 12)
 material = SubResource("StandardMaterial3D_0q4da")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f73tj"]
+size = Vector3(16.23, 2.405, 2.435)
 
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, -1.5, 1.319)
@@ -380,3 +384,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04555, 1.86139, -150.96)
 
 [node name="Ours6" parent="." instance=ExtResource("5_8rtyn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04555, 1.86139, -195.634)
+
+[node name="monté là" type="Node" parent="."]
+
+[node name="ciel trigger" type="Area3D" parent="monté là"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 38.5641)
+script = ExtResource("13_fnw0q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="monté là/ciel trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.38707)
+shape = SubResource("BoxShape3D_f73tj")
+
+[node name="ciel trigger2" type="Area3D" parent="monté là"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.43721)
+script = ExtResource("13_fnw0q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="monté là/ciel trigger2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.38707)
+shape = SubResource("BoxShape3D_f73tj")
+
+[connection signal="body_entered" from="monté là/ciel trigger" to="monté là/ciel trigger" method="_on_body_entered"]
+[connection signal="body_entered" from="monté là/ciel trigger2" to="monté là/ciel trigger2" method="_on_body_entered"]
