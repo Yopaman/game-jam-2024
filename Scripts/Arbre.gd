@@ -14,4 +14,5 @@ func _physics_process(delta):
 
 
 func _on_trigger_box_body_entered(body):
-	triggered = true
+	if body.is_in_group("player"):
+		triggered = true
