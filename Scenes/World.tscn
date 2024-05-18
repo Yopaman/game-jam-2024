@@ -80,7 +80,7 @@ mesh = SubResource("PlaneMesh_dx1hv")
 surface_material_override/0 = ExtResource("1_hiyjm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.150019, 0.988683, 0, -0.988683, 0.150019, -2.84277, 6.50559, 9.22082)
+transform = Transform3D(0.956753, 0.128936, 0.260768, 0, -0.896409, 0.443228, 0.290903, -0.42406, -0.857642, 23.0544, 11.7762, -69.8828)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_b5bxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269914, 5.08274, 9.62532)
