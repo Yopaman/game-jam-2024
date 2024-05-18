@@ -134,9 +134,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.873, 0, 1.57)
 [node name="ours_bleu" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(4.805, 0, 0, 0, 4.805, 0, 0, 0, 4.805, 0, 1.79904, 0)
 visible = false
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_wbnc7")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.012, 0, 1.818, 0)
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_qvgen")
 animation = &"idle"
