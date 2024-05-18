@@ -42,7 +42,7 @@ float edge(float depth){
 void vertex() {
 	world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	height = texture(wave, world_pos.xz / noise_scale + TIME * time_scale).r;
-	VERTEX.y += height * height_scale;
+	VERTEX.y += height *height_scale;
 }
 
 void fragment() {
@@ -68,7 +68,7 @@ void fragment() {
 	vec2 time2 = (TIME * wave_direction2) * time_scale; // Movement rate of second wave
 	
 	// Blend normal maps into one
-	vec3 normal_blend = mix(texture(texture_normal,world_pos.xz + time).rgb, texture(texture_normal2,world_pos.xz + time2).rgb, 0.5);
+	vec3 normal_blend = mix(texture(texture_normal,vec2(10.0,10.0)*UV + time).rgb, texture(texture_normal2,vec2(10.0,10.0)*UV + time2).rgb, 0.9);
 	
 	// Calculate Fresnel
 	float fresnel = fresnel(5.0, NORMAL, VIEW);
