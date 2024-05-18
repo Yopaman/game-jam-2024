@@ -38,6 +38,8 @@ func _physics_process(delta):
 	global_position.x = lerp(global_position.x, (lane_index * lanes_width) - lanes_width, delta * 5.0)
 	global_position.x = clamp(global_position.x, -6, 6)
 
+	$saumon_v03_hi2.rotation.x = -linear_velocity.y * 0.1 
+
 	submerged = false
 	global_position.z += -5 * speed * delta
 	var depth := water_height - global_position.y
@@ -45,7 +47,7 @@ func _physics_process(delta):
 		submerged = true
 		apply_central_force(Vector3.UP * float_force * gravity * depth)
 	if diving:
-		linear_velocity.y = 0.0
+		#linear_velocity.y = 0.0
 		apply_central_force(Vector3.DOWN * dive_force)
 		diving = false
 	if depth < -1 or depth > 1:

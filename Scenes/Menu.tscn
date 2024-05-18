@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf6xvi5cxsj2k"]
+[gd_scene load_steps=5 format=3 uid="uid://cf6xvi5cxsj2k"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_hlhg1"]
+[ext_resource type="PackedScene" uid="uid://cah26diafl4qj" path="res://Models/saumon.tscn" id="2_aobj7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cxsnc"]
 font_size = 36
@@ -16,6 +17,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hlhg1")
+
+[node name="saumon_v03_hi" parent="." instance=ExtResource("2_aobj7")]
+transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.357, 0, 0, 0)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
