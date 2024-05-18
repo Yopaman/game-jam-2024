@@ -1,12 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://xpcsgfg1n2yf"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_0rswd"]
-[ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://scenes/Player.tscn" id="1_b5bxb"]
+[ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://Scenes/Player.tscn" id="1_b5bxb"]
 [ext_resource type="Material" uid="uid://dn3djh7xtflab" path="res://Shaders/water.tres" id="1_hiyjm"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tlih8"]
-[ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
-[ext_resource type="PackedScene" uid="uid://dr0sk2g6ci8ds" path="res://scenes/Obstacle/Arbre.tscn" id="4_voo23"]
-[ext_resource type="PackedScene" path="res://Scenes/Obstacle/Ours.tscn" id="5_8rtyn"]
+[ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://Scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
+[ext_resource type="PackedScene" uid="uid://dr0sk2g6ci8ds" path="res://Scenes/Obstacle/Arbre.tscn" id="4_voo23"]
+[ext_resource type="PackedScene" uid="uid://b2g8trjiefa5j" path="res://Scenes/Obstacle/Ours.tscn" id="5_8rtyn"]
 [ext_resource type="Shader" path="res://addons/simplegrasstextured/shaders/grass.gdshader" id="6_4ce7y"]
 [ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="7_ju3a1"]
 [ext_resource type="Script" path="res://addons/simplegrasstextured/grass.gd" id="8_r3bwc"]
@@ -21,7 +21,7 @@ material = SubResource("StandardMaterial3D_0q4da")
 
 [sub_resource type="BoxMesh" id="BoxMesh_uykv1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n3gbq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_51lln"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("6_4ce7y")
@@ -56,7 +56,7 @@ _surfaces = [{
 "format": 34359742495,
 "index_count": 12,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 5, 0, 4, 0),
-"material": SubResource("ShaderMaterial_n3gbq"),
+"material": SubResource("ShaderMaterial_51lln"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
@@ -142,11 +142,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.90088, 0.972118, -19.3427)
 [node name="Node3D" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32.8351)
 
-[node name="Node3D2" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.53962)
-
 [node name="Node3D4" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -11.291)
+
+[node name="Node3D2" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.53962)
 
 [node name="Node3D5" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.0041)
