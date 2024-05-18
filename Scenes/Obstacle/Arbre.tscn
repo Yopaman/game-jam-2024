@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr0sk2g6ci8ds"]
 
 [ext_resource type="Script" path="res://Scripts/Arbre.gd" id="1_7t08f"]
-[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://scenes/Obstacle/Obstacle.tscn" id="2_qnpj8"]
+[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://Scenes/Obstacle/Obstacle.tscn" id="2_qnpj8"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mw36t"]
 
