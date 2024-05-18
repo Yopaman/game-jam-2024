@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://bfnn30nyyiiae" path="res://Shaders/water.tres" id="1_hiyjm"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tlih8"]
 [ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://Scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
-[ext_resource type="PackedScene" uid="uid://dr0sk2g6ci8ds" path="res://Scenes/Obstacle/Arbre.tscn" id="4_voo23"]
+[ext_resource type="PackedScene" uid="uid://dr0sk2g6ci8ds" path="res://Scenes/Obstacle/Tronc.tscn" id="4_voo23"]
 [ext_resource type="PackedScene" uid="uid://b2g8trjiefa5j" path="res://Scenes/Obstacle/Ours.tscn" id="5_8rtyn"]
 [ext_resource type="PackedScene" uid="uid://d36bb8mindaob" path="res://Models/sol_texture.tscn" id="9_lfakd"]
 [ext_resource type="PackedScene" uid="uid://bf0yj0mi5wggu" path="res://Models/sol_marin.tscn" id="11_bkmwk"]
@@ -82,11 +82,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.2948)
 [node name="Arbre" parent="Monde/Obstacles" instance=ExtResource("4_voo23")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48766, -0.0339565, -12.3812)
 
-[node name="Root Scene" parent="." instance=ExtResource("11_bkmwk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.30503, -0.136148, 0)
+[node name="Nid Riviere" type="Node" parent="Monde"]
 
-[node name="sol2" parent="." instance=ExtResource("9_lfakd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9783, 1.51163, 0)
+[node name="Root Scene" parent="Monde/Nid Riviere" instance=ExtResource("11_bkmwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19497, -2.58422, 1.319)
 
-[node name="sol3" parent="." instance=ExtResource("9_lfakd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5077, 1.51163, 0)
+[node name="sol2" parent="Monde/Nid Riviere" instance=ExtResource("9_lfakd")]
+transform = Transform3D(1, 0, 0, 0, 3.20921, 0, 0, 0, 1, -11.4783, -1.86891, 1.319)
+
+[node name="sol3" parent="Monde/Nid Riviere" instance=ExtResource("9_lfakd")]
+transform = Transform3D(1, 0, 0, 0, 1.68671, 0, 0, 0, 1, 14.9028, -0.78998, 1.319)

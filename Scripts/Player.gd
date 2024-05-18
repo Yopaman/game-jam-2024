@@ -32,7 +32,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("down") and can_dive:
 		diving = true
 		can_dive = false
-	
+
 func _physics_process(delta):
 	# lerp the player between lanes
 	global_position.x = lerp(global_position.x, (lane_index * lanes_width) - lanes_width, delta * 5.0)
