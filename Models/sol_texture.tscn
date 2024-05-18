@@ -20,7 +20,7 @@ ao_texture = ExtResource("3_3rulb")
 heightmap_enabled = true
 heightmap_texture = ExtResource("4_72qhl")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tr60n"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3biq6"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("7_20pxt")
@@ -55,7 +55,7 @@ _surfaces = [{
 "format": 34359742495,
 "index_count": 12,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 5, 0, 4, 0),
-"material": SubResource("ShaderMaterial_tr60n"),
+"material": SubResource("ShaderMaterial_3biq6"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
