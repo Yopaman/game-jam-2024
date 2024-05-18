@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://xpcsgfg1n2yf"]
 
-[ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://Scenes/Player.tscn" id="1_b5bxb"]
+[ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://scenes/Player.tscn" id="1_b5bxb"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tlih8"]
-[ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://Scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
-[ext_resource type="PackedScene" uid="uid://dr0sk2g6ci8ds" path="res://Scenes/Obstacle/Arbre.tscn" id="4_voo23"]
+[ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
+[ext_resource type="PackedScene" uid="uid://dr0sk2g6ci8ds" path="res://scenes/Obstacle/Arbre.tscn" id="4_voo23"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0q4da"]
 albedo_color = Color(0, 0.211765, 0.607843, 1)

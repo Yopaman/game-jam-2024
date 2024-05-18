@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dg1wor2lirncs"]
 
-[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://Scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
+[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_estux"]
 albedo_color = Color(0.141176, 1, 1, 1)
