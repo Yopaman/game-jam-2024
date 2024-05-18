@@ -1,13 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg1wor2lirncs"]
+[gd_scene load_steps=9 format=3 uid="uid://dg1wor2lirncs"]
 
-[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://Scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
+[ext_resource type="Script" path="res://Scripts/Caillou.gd" id="1_imjoq"]
+[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
 [ext_resource type="Texture2D" uid="uid://bo4th2oq72i8m" path="res://Textures/caillou1.png" id="2_16ou7"]
+[ext_resource type="Texture2D" uid="uid://ejy6svpmtwwu" path="res://Textures/Caillou.png" id="4_7h3cg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00ysg"]
+atlas = ExtResource("4_7h3cg")
+region = Rect2(0, 0, 1666, 3000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hed1"]
+atlas = ExtResource("4_7h3cg")
+region = Rect2(1666, 0, 1666, 3000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pibo6"]
+atlas = ExtResource("4_7h3cg")
+region = Rect2(3332, 0, 1666, 3000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvycb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00ysg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hed1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pibo6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(0.363733, 0, 0, 0, 0.363733, 0, 0, 0, 0.363733, 0, 0, 0)
+script = ExtResource("1_imjoq")
 
 [node name="ObstacleArea" parent="." instance=ExtResource("1_jid1t")]
 
 [node name="Sprite3D" type="Sprite3D" parent="ObstacleArea"]
 transform = Transform3D(0.130607, 0, 0, 0, 0.0194222, 0.132213, 0, -0.131527, 0.0195236, 0, 0.125999, 0)
+visible = false
 billboard = 1
 texture = ExtResource("2_16ou7")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="ObstacleArea"]
+transform = Transform3D(0.0887966, 0, 0, 0, 0.0887966, 0, 0, 0, 0.0887966, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_vvycb")
+frame_progress = 0.730311
