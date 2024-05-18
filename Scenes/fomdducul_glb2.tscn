@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6cjnqyqvu684"]
+
+[ext_resource type="PackedScene" uid="uid://cf0c06iwxrhhg" path="res://scenes/fomdducul_glb.glb" id="1_pwb0w"]
+[ext_resource type="Texture2D" uid="uid://1f8ee8cslaa5" path="res://Textures/ciel02.png" id="2_4fao6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4sgrg"]
+albedo_texture = ExtResource("2_4fao6")
+
+[node name="fomdducul_glb" instance=ExtResource("1_pwb0w")]
+
+[node name="fond" parent="." index="0"]
+transform = Transform3D(-123.565, 0, 0, 0, 2.31765e-07, -78.5251, 0, 0.648063, 2.80828e-05, -2.81474, 55.7569, -108.917)
+surface_material_override/0 = SubResource("StandardMaterial3D_4sgrg")

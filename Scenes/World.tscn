@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://xpcsgfg1n2yf"]
+[gd_scene load_steps=21 format=3 uid="uid://xpcsgfg1n2yf"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_0rswd"]
 [ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://scenes/Player.tscn" id="1_b5bxb"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://dmppi7xcocwm2" path="res://scenes/transition.tscn" id="11_6aagp"]
 [ext_resource type="PackedScene" uid="uid://bf0yj0mi5wggu" path="res://Models/sol_marin.tscn" id="11_bkmwk"]
 [ext_resource type="Script" path="res://scenes/Ciel_trigger.gd" id="13_fnw0q"]
+[ext_resource type="PackedScene" uid="uid://bb830xwcsk6je" path="res://scenes/montagne.tscn" id="14_1mj2i"]
+[ext_resource type="ArrayMesh" uid="uid://btwagvf60xgop" path="res://scenes/ciel_msh.obj" id="15_oxtfu"]
+[ext_resource type="PackedScene" uid="uid://0owohkln2g83" path="res://scenes/fomdducul_glb.tscn" id="16_8vef1"]
+[ext_resource type="PackedScene" uid="uid://c6cjnqyqvu684" path="res://scenes/fomdducul_glb2.tscn" id="17_gcg8f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0q4da"]
 transparency = 1
@@ -38,7 +42,7 @@ transform = Transform3D(0.956753, 0.128936, 0.260768, 0, -0.896409, 0.443228, 0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269914, 5.08274, 9.62532)
 
 [node name="Camera3D" type="Camera3D" parent="Monde" node_paths=PackedStringArray("player")]
-transform = Transform3D(0.999999, 0.00174533, -2.64286e-09, -0.00144181, 0.826097, 0.563526, 0.000983539, -0.563525, 0.826098, 0, 3.238, 14.4231)
+transform = Transform3D(0.999999, 0.00174533, -2.81376e-09, -0.00144181, 0.826097, 0.563526, 0.000983539, -0.563525, 0.826098, 0, 3.238, 14.4231)
 current = true
 script = ExtResource("1_tlih8")
 player = NodePath("../Player")
@@ -387,21 +391,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04555, 1.86139, -195.634)
 
 [node name="monté là" type="Node" parent="."]
 
-[node name="ciel trigger" type="Area3D" parent="monté là"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 38.5641)
-script = ExtResource("13_fnw0q")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="monté là/ciel trigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.38707)
-shape = SubResource("BoxShape3D_f73tj")
-
 [node name="ciel trigger2" type="Area3D" parent="monté là"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.43721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -281.565)
 script = ExtResource("13_fnw0q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="monté là/ciel trigger2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.38707)
 shape = SubResource("BoxShape3D_f73tj")
 
-[connection signal="body_entered" from="monté là/ciel trigger" to="monté là/ciel trigger" method="_on_body_entered"]
+[node name="Root Scene" parent="monté là" instance=ExtResource("11_bkmwk")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.19497, 36.0261, -284.503)
+
+[node name="montagne" parent="monté là" instance=ExtResource("14_1mj2i")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 25.6333, 37.5532, -304.285)
+
+[node name="montagne2" parent="monté là" instance=ExtResource("14_1mj2i")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -23.6758, 39.0532, -302.6)
+
+[node name="water" type="MeshInstance3D" parent="monté là"]
+transform = Transform3D(6.20118, 0, 0, 0, -7.59752e-08, -41.8857, 0, 1.73811, -1.83088e-06, 1.58182, 41.0394, -283.23)
+transparency = 0.8
+mesh = SubResource("PlaneMesh_dx1hv")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = ExtResource("1_hiyjm")
+
+[node name="CielMsh" type="MeshInstance3D" parent="monté là"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5444, 54.4945, -217.233)
+mesh = ExtResource("15_oxtfu")
+skeleton = NodePath("../..")
+
+[node name="fomdducul_glb" parent="." instance=ExtResource("16_8vef1")]
+transform = Transform3D(0.639596, 0, 0, 0, 0.639596, 0, 0, 0, 0.639596, 2.93436, 61.7913, -253.059)
+
+[node name="fomdducul_glb2" parent="." instance=ExtResource("17_gcg8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0739, 156.869, -212.512)
+
 [connection signal="body_entered" from="monté là/ciel trigger2" to="monté là/ciel trigger2" method="_on_body_entered"]

@@ -12,8 +12,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if ciel or player.global_position.y - initial_y > 0.5:
-		ciel = true
+		if not ciel:
+			ciel = true
 		global_transform.origin.y = player.global_position.y + 1.5
+		rotation.x = 0
+
 
 	global_transform.origin.z = player.global_position.z + 3
 	global_transform.origin.x = player.global_position.x
