@@ -10,5 +10,7 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
+	if get_parent_node_3d().is_in_group("ours"):
+		get_parent_node_3d().attack()
 	if body.is_in_group("player"):
 		body.on_Obstacle_hit()

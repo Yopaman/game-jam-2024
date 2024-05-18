@@ -3,7 +3,11 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var nbr := randi() % 4
+	if nbr > 2:
+		$AnimatedSprite3D.hide()
+		$ours_bleu.show()
+		$ours_bleu.play()
 	
-	#$AnimatedSprite3D.play("default")
-
-	$Sprite3D.texture=load("Textures/ours.png")
+func attack():
+	$AnimatedSprite3D.play("attack")
