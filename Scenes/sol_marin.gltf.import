@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://yaqyp2osckur"
-path="res://.godot/imported/sol_marin.gltf-3ca519178c25dbbf1a873adb20f4b606.scn"
+path="res://.godot/imported/sol_marin.gltf-b16d6e67a1b1fdd9541eeb84be7cbf2a.scn"
 
 [deps]
 
-source_file="res://Scenes/sol_marin.gltf"
-dest_files=["res://.godot/imported/sol_marin.gltf-3ca519178c25dbbf1a873adb20f4b606.scn"]
+source_file="res://scenes/sol_marin.gltf"
+dest_files=["res://.godot/imported/sol_marin.gltf-b16d6e67a1b1fdd9541eeb84be7cbf2a.scn"]
 
 [params]
 

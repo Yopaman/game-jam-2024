@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dg1wor2lirncs"]
 
 [ext_resource type="Script" path="res://Scripts/Caillou.gd" id="1_imjoq"]
-[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://Scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
+[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
 [ext_resource type="Texture2D" uid="uid://dbk3nqdllwmyy" path="res://Textures/caillou_1_1.png" id="4_ajw0v"]
 [ext_resource type="Texture2D" uid="uid://duhrkhknmo3bd" path="res://Textures/caillou_1_2.png" id="5_8knqr"]
 [ext_resource type="Texture2D" uid="uid://v776m4cm46k1" path="res://Textures/caillou_1_3.png" id="6_7ktxv"]

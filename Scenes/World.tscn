@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://xpcsgfg1n2yf"]
+[gd_scene load_steps=13 format=3 uid="uid://xpcsgfg1n2yf"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_0rswd"]
-[ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://Scenes/Player.tscn" id="1_b5bxb"]
+[ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://scenes/Player.tscn" id="1_b5bxb"]
 [ext_resource type="Material" uid="uid://bfnn30nyyiiae" path="res://Shaders/water.tres" id="1_hiyjm"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tlih8"]
-[ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://Scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
-[ext_resource type="PackedScene" uid="uid://dr0sk2g6ci8ds" path="res://Scenes/Obstacle/Tronc.tscn" id="4_voo23"]
-[ext_resource type="PackedScene" uid="uid://b2g8trjiefa5j" path="res://Scenes/Obstacle/Ours.tscn" id="5_8rtyn"]
-[ext_resource type="PackedScene" uid="uid://d36bb8mindaob" path="res://Models/sol_texture.tscn" id="9_lfakd"]
+[ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
+[ext_resource type="Texture2D" uid="uid://bueqedwgruhr7" path="res://Textures/A_Chene.png" id="7_fchoe"]
+[ext_resource type="Texture2D" uid="uid://dkxbb4m3faq8y" path="res://Textures/A_Sapin.png" id="8_lovk6"]
+[ext_resource type="Texture2D" uid="uid://bfm7h8d74tiv0" path="res://Textures/A_Saule_pleureur.png" id="9_gratv"]
+[ext_resource type="PackedScene" uid="uid://8j44iv7b4r3u" path="res://Models/sol_texture.tscn" id="9_lfakd"]
 [ext_resource type="PackedScene" uid="uid://bf0yj0mi5wggu" path="res://Models/sol_marin.tscn" id="11_bkmwk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0q4da"]
@@ -24,20 +25,6 @@ script = ExtResource("1_0rswd")
 
 [node name="Monde" type="Node" parent="."]
 
-[node name="water" type="MeshInstance3D" parent="Monde"]
-transform = Transform3D(6.20118, 0, 0, 0, 1.73811, 0, 0, 0, 34.0817, 1.542, -0.07, -12.733)
-transparency = 0.8
-mesh = SubResource("PlaneMesh_dx1hv")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("1_hiyjm")
-
-[node name="water2" type="MeshInstance3D" parent="Monde"]
-transform = Transform3D(6.20118, 0, 0, 0, 1.73811, 0, 0, 0, 34.0817, 1.58702, -0.0700019, -80.8891)
-transparency = 0.8
-mesh = SubResource("PlaneMesh_dx1hv")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("1_hiyjm")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Monde"]
 transform = Transform3D(0.956753, 0.128936, 0.260768, 0, -0.896409, 0.443228, 0.290903, -0.42406, -0.857641, 23.0544, 11.7762, -69.8828)
 
@@ -50,45 +37,326 @@ current = true
 script = ExtResource("1_tlih8")
 player = NodePath("../Player")
 
-[node name="Obstacles" type="Node" parent="Monde"]
-
-[node name="Ours" parent="Monde/Obstacles" instance=ExtResource("5_8rtyn")]
-transform = Transform3D(0.997916, 0, 0, 0, 0.997916, 0, 0, 0, 0.997916, 7.93153, 0.2973, -19.3289)
-
-[node name="Node3D" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32.8351)
-
-[node name="Node3D4" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -11.291)
-
-[node name="Node3D2" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.53962)
-
-[node name="Node3D5" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.0041)
-
-[node name="Node3D7" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -18.335)
-
-[node name="Node3D8" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -8.051)
-
-[node name="Node3D9" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -8)
-
-[node name="Node3D10" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.2948)
-
-[node name="Arbre" parent="Monde/Obstacles" instance=ExtResource("4_voo23")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48766, -0.0339565, -12.3812)
-
 [node name="Nid Riviere" type="Node" parent="Monde"]
 
-[node name="Root Scene" parent="Monde/Nid Riviere" instance=ExtResource("11_bkmwk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19497, -2.58422, 1.319)
+[node name="Murs" type="Node" parent="Monde/Nid Riviere"]
 
-[node name="sol2" parent="Monde/Nid Riviere" instance=ExtResource("9_lfakd")]
+[node name="sol2" parent="Monde/Nid Riviere/Murs" instance=ExtResource("9_lfakd")]
 transform = Transform3D(1, 0, 0, 0, 3.20921, 0, 0, 0, 1, -11.4783, -1.86891, 1.319)
 
-[node name="sol3" parent="Monde/Nid Riviere" instance=ExtResource("9_lfakd")]
+[node name="Root Scene" parent="Monde/Nid Riviere/Murs" instance=ExtResource("11_bkmwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19497, -2.58422, 1.319)
+
+[node name="sol3" parent="Monde/Nid Riviere/Murs" instance=ExtResource("9_lfakd")]
 transform = Transform3D(1, 0, 0, 0, 1.68671, 0, 0, 0, 1, 14.9028, -0.78998, 1.319)
+
+[node name="water" type="MeshInstance3D" parent="Monde/Nid Riviere/Murs"]
+transform = Transform3D(6.20118, 0, 0, 0, 1.73811, 0, 0, 0, 41.8857, 1.58182, -0.07, 1.39574)
+transparency = 0.8
+mesh = SubResource("PlaneMesh_dx1hv")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = ExtResource("1_hiyjm")
+
+[node name="Décoration" type="Node" parent="Monde/Nid Riviere"]
+
+[node name="arbre1" type="Sprite3D" parent="Monde/Nid Riviere/Décoration"]
+transform = Transform3D(0.351644, 0, 0, 0, 0.351644, 0, 0, 0, 0.351644, 19.2644, 2.3971, 2.69499)
+texture = ExtResource("7_fchoe")
+
+[node name="arbre2" type="Sprite3D" parent="Monde/Nid Riviere/Décoration"]
+transform = Transform3D(0.294742, 0, 0, 0, 0.294742, 0, 0, 0, 0.294742, 15.9685, 3.42793, 14.8774)
+texture = ExtResource("8_lovk6")
+
+[node name="arbre3" type="Sprite3D" parent="Monde/Nid Riviere/Décoration"]
+transform = Transform3D(0.201401, 0, 0, 0, 0.201401, 0, 0, 0, 0.201401, 13.0254, 3.15336, 25.7426)
+texture = ExtResource("9_gratv")
+
+[node name="arbre12" type="Sprite3D" parent="Monde/Nid Riviere/Décoration"]
+transform = Transform3D(0.162318, 0, 0, 0, 0.162318, 0, 0, 0, 0.162318, -11.962, 3.501, 25.3353)
+texture = ExtResource("8_lovk6")
+
+[node name="arbre22" type="Sprite3D" parent="Monde/Nid Riviere/Décoration"]
+transform = Transform3D(0.204105, 0, 0, 0, 0.204105, 0, 0, 0, 0.204105, -9.24326, 2.26119, 4.13779)
+texture = ExtResource("7_fchoe")
+
+[node name="arbre32" type="Sprite3D" parent="Monde/Nid Riviere/Décoration"]
+transform = Transform3D(0.0405625, 0, 0, 0, 0.0405625, 0, 0, 0, 0.0405625, -7.72123, 11.3757, 12.1571)
+texture = ExtResource("9_gratv")
+
+[node name="Obstacles" type="Node" parent="Monde/Nid Riviere"]
+
+[node name="Node3D" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 5.17189, 0, 0)
+
+[node name="Node3D2" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, -0.5055, 0, 0)
+
+[node name="Node3D3" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 5.17189, 0, 10.4639)
+
+[node name="Node3D4" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.80205, 0, 22.4154)
+
+[node name="Node3D5" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.281087, 0, 33.6369)
+
+[node name="Node3D6" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.281087, 0, 23.4222)
+
+[node name="Node3D7" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, 38.5357)
+
+[node name="Node3D8" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -15.6396)
+
+[node name="Node3D9" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.982301, 0, -29.1822)
+
+[node name="Node3D10" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -35.8366)
+
+[node name="Node3D11" parent="Monde/Nid Riviere/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, -1.8248, 0, -23.9806)
+
+[node name="Nid Riviere2" type="Node" parent="Monde"]
+
+[node name="Murs" type="Node" parent="Monde/Nid Riviere2"]
+
+[node name="sol2" parent="Monde/Nid Riviere2/Murs" instance=ExtResource("9_lfakd")]
+transform = Transform3D(1, 0, 0, 0, 3.20921, 0, 0, 0, 1, -11.4783, -1.86891, -81.3315)
+
+[node name="Root Scene" parent="Monde/Nid Riviere2/Murs" instance=ExtResource("11_bkmwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19497, -2.58422, -81.3315)
+
+[node name="sol3" parent="Monde/Nid Riviere2/Murs" instance=ExtResource("9_lfakd")]
+transform = Transform3D(1, 0, 0, 0, 1.68671, 0, 0, 0, 1, 14.9028, -0.78998, -81.3315)
+
+[node name="water" type="MeshInstance3D" parent="Monde/Nid Riviere2/Murs"]
+transform = Transform3D(6.20118, 0, 0, 0, 1.73811, 0, 0, 0, 41.8857, 1.58182, -0.07, -81.2548)
+transparency = 0.8
+mesh = SubResource("PlaneMesh_dx1hv")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = ExtResource("1_hiyjm")
+
+[node name="Décoration" type="Node" parent="Monde/Nid Riviere2"]
+
+[node name="arbre1" type="Sprite3D" parent="Monde/Nid Riviere2/Décoration"]
+transform = Transform3D(0.351644, 0, 0, 0, 0.351644, 0, 0, 0, 0.351644, 19.2644, 2.3971, -79.9556)
+texture = ExtResource("7_fchoe")
+
+[node name="arbre2" type="Sprite3D" parent="Monde/Nid Riviere2/Décoration"]
+transform = Transform3D(0.294742, 0, 0, 0, 0.294742, 0, 0, 0, 0.294742, 15.9685, 3.42793, -67.7732)
+texture = ExtResource("8_lovk6")
+
+[node name="arbre3" type="Sprite3D" parent="Monde/Nid Riviere2/Décoration"]
+transform = Transform3D(0.201401, 0, 0, 0, 0.201401, 0, 0, 0, 0.201401, 13.0254, 3.15336, -56.9079)
+texture = ExtResource("9_gratv")
+
+[node name="arbre12" type="Sprite3D" parent="Monde/Nid Riviere2/Décoration"]
+transform = Transform3D(0.162318, 0, 0, 0, 0.162318, 0, 0, 0, 0.162318, -11.962, 3.501, -57.3152)
+texture = ExtResource("8_lovk6")
+
+[node name="arbre22" type="Sprite3D" parent="Monde/Nid Riviere2/Décoration"]
+transform = Transform3D(0.204105, 0, 0, 0, 0.204105, 0, 0, 0, 0.204105, -9.24326, 2.26119, -78.5128)
+texture = ExtResource("7_fchoe")
+
+[node name="arbre32" type="Sprite3D" parent="Monde/Nid Riviere2/Décoration"]
+transform = Transform3D(0.0405625, 0, 0, 0, 0.0405625, 0, 0, 0, 0.0405625, -7.72123, 11.3757, -70.4934)
+texture = ExtResource("9_gratv")
+
+[node name="Obstacles" type="Node" parent="Monde/Nid Riviere2"]
+
+[node name="Node3D" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 5.17189, 0, -82.6505)
+
+[node name="Node3D2" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, -0.5055, 0, -82.6505)
+
+[node name="Node3D3" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 5.17189, 0, -72.1867)
+
+[node name="Node3D4" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.80205, 0, -60.2351)
+
+[node name="Node3D5" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.281087, 0, -49.0136)
+
+[node name="Node3D6" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.281087, 0, -59.2283)
+
+[node name="Node3D7" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -44.1149)
+
+[node name="Node3D8" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -98.2901)
+
+[node name="Node3D9" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.982301, 0, -111.833)
+
+[node name="Node3D10" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -118.487)
+
+[node name="Node3D11" parent="Monde/Nid Riviere2/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, -1.8248, 0, -106.631)
+
+[node name="Nid Riviere3" type="Node" parent="Monde"]
+
+[node name="Murs" type="Node" parent="Monde/Nid Riviere3"]
+
+[node name="sol2" parent="Monde/Nid Riviere3/Murs" instance=ExtResource("9_lfakd")]
+transform = Transform3D(1, 0, 0, 0, 3.20921, 0, 0, 0, 1, -11.4783, -1.86891, -163.971)
+
+[node name="Root Scene" parent="Monde/Nid Riviere3/Murs" instance=ExtResource("11_bkmwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19497, -2.58422, -163.971)
+
+[node name="sol3" parent="Monde/Nid Riviere3/Murs" instance=ExtResource("9_lfakd")]
+transform = Transform3D(1, 0, 0, 0, 1.68671, 0, 0, 0, 1, 14.9028, -0.78998, -163.971)
+
+[node name="water" type="MeshInstance3D" parent="Monde/Nid Riviere3/Murs"]
+transform = Transform3D(6.20118, 0, 0, 0, 1.73811, 0, 0, 0, 41.8857, 1.58182, -0.07, -163.895)
+transparency = 0.8
+mesh = SubResource("PlaneMesh_dx1hv")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = ExtResource("1_hiyjm")
+
+[node name="Décoration" type="Node" parent="Monde/Nid Riviere3"]
+
+[node name="arbre1" type="Sprite3D" parent="Monde/Nid Riviere3/Décoration"]
+transform = Transform3D(0.351644, 0, 0, 0, 0.351644, 0, 0, 0, 0.351644, 19.2644, 2.3971, -162.595)
+texture = ExtResource("7_fchoe")
+
+[node name="arbre2" type="Sprite3D" parent="Monde/Nid Riviere3/Décoration"]
+transform = Transform3D(0.294742, 0, 0, 0, 0.294742, 0, 0, 0, 0.294742, 15.9685, 3.42793, -150.413)
+texture = ExtResource("8_lovk6")
+
+[node name="arbre3" type="Sprite3D" parent="Monde/Nid Riviere3/Décoration"]
+transform = Transform3D(0.201401, 0, 0, 0, 0.201401, 0, 0, 0, 0.201401, 13.0254, 3.15336, -139.548)
+texture = ExtResource("9_gratv")
+
+[node name="arbre12" type="Sprite3D" parent="Monde/Nid Riviere3/Décoration"]
+transform = Transform3D(0.162318, 0, 0, 0, 0.162318, 0, 0, 0, 0.162318, -11.962, 3.501, -139.955)
+texture = ExtResource("8_lovk6")
+
+[node name="arbre22" type="Sprite3D" parent="Monde/Nid Riviere3/Décoration"]
+transform = Transform3D(0.204105, 0, 0, 0, 0.204105, 0, 0, 0, 0.204105, -9.24326, 2.26119, -161.153)
+texture = ExtResource("7_fchoe")
+
+[node name="arbre32" type="Sprite3D" parent="Monde/Nid Riviere3/Décoration"]
+transform = Transform3D(0.0405625, 0, 0, 0, 0.0405625, 0, 0, 0, 0.0405625, -7.72123, 11.3757, -153.133)
+texture = ExtResource("9_gratv")
+
+[node name="Obstacles" type="Node" parent="Monde/Nid Riviere3"]
+
+[node name="Node3D" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 5.17189, 0, -165.29)
+
+[node name="Node3D2" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, -0.5055, 0, -165.29)
+
+[node name="Node3D3" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 5.17189, 0, -154.827)
+
+[node name="Node3D4" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.80205, 0, -142.875)
+
+[node name="Node3D5" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.281087, 0, -131.653)
+
+[node name="Node3D6" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.281087, 0, -141.868)
+
+[node name="Node3D7" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -126.755)
+
+[node name="Node3D8" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -180.93)
+
+[node name="Node3D9" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.982301, 0, -194.473)
+
+[node name="Node3D10" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -201.127)
+
+[node name="Node3D11" parent="Monde/Nid Riviere3/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, -1.8248, 0, -189.271)
+
+[node name="Nid Riviere4" type="Node" parent="Monde"]
+
+[node name="Murs" type="Node" parent="Monde/Nid Riviere4"]
+
+[node name="sol2" parent="Monde/Nid Riviere4/Murs" instance=ExtResource("9_lfakd")]
+transform = Transform3D(1, 0, 0, 0, 3.20921, 0, 0, 0, 1, -11.4783, -1.86891, -246.358)
+
+[node name="Root Scene" parent="Monde/Nid Riviere4/Murs" instance=ExtResource("11_bkmwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19497, -2.58422, -246.358)
+
+[node name="sol3" parent="Monde/Nid Riviere4/Murs" instance=ExtResource("9_lfakd")]
+transform = Transform3D(1, 0, 0, 0, 1.68671, 0, 0, 0, 1, 14.9028, -0.78998, -246.358)
+
+[node name="water" type="MeshInstance3D" parent="Monde/Nid Riviere4/Murs"]
+transform = Transform3D(6.20118, 0, 0, 0, 1.73811, 0, 0, 0, 41.8857, 1.58182, -0.07, -246.281)
+transparency = 0.8
+mesh = SubResource("PlaneMesh_dx1hv")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = ExtResource("1_hiyjm")
+
+[node name="Décoration" type="Node" parent="Monde/Nid Riviere4"]
+
+[node name="arbre1" type="Sprite3D" parent="Monde/Nid Riviere4/Décoration"]
+transform = Transform3D(0.351644, 0, 0, 0, 0.351644, 0, 0, 0, 0.351644, 19.2644, 2.3971, -244.982)
+texture = ExtResource("7_fchoe")
+
+[node name="arbre2" type="Sprite3D" parent="Monde/Nid Riviere4/Décoration"]
+transform = Transform3D(0.294742, 0, 0, 0, 0.294742, 0, 0, 0, 0.294742, 15.9685, 3.42793, -232.8)
+texture = ExtResource("8_lovk6")
+
+[node name="arbre3" type="Sprite3D" parent="Monde/Nid Riviere4/Décoration"]
+transform = Transform3D(0.201401, 0, 0, 0, 0.201401, 0, 0, 0, 0.201401, 13.0254, 3.15336, -221.934)
+texture = ExtResource("9_gratv")
+
+[node name="arbre12" type="Sprite3D" parent="Monde/Nid Riviere4/Décoration"]
+transform = Transform3D(0.162318, 0, 0, 0, 0.162318, 0, 0, 0, 0.162318, -11.962, 3.501, -222.342)
+texture = ExtResource("8_lovk6")
+
+[node name="arbre22" type="Sprite3D" parent="Monde/Nid Riviere4/Décoration"]
+transform = Transform3D(0.204105, 0, 0, 0, 0.204105, 0, 0, 0, 0.204105, -9.24326, 2.26119, -243.539)
+texture = ExtResource("7_fchoe")
+
+[node name="arbre32" type="Sprite3D" parent="Monde/Nid Riviere4/Décoration"]
+transform = Transform3D(0.0405625, 0, 0, 0, 0.0405625, 0, 0, 0, 0.0405625, -7.72123, 11.3757, -235.52)
+texture = ExtResource("9_gratv")
+
+[node name="Obstacles" type="Node" parent="Monde/Nid Riviere4"]
+
+[node name="Node3D" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 5.17189, 0, -247.677)
+
+[node name="Node3D2" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, -0.5055, 0, -247.677)
+
+[node name="Node3D3" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 5.17189, 0, -237.213)
+
+[node name="Node3D4" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.80205, 0, -225.261)
+
+[node name="Node3D5" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.281087, 0, -214.04)
+
+[node name="Node3D6" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.281087, 0, -224.255)
+
+[node name="Node3D7" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -209.141)
+
+[node name="Node3D8" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -263.316)
+
+[node name="Node3D9" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 0.982301, 0, -276.859)
+
+[node name="Node3D10" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, 4.63419, 0, -283.514)
+
+[node name="Node3D11" parent="Monde/Nid Riviere4/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(0.630261, 0, 0, 0, 0.630261, 0, 0, 0, 0.354997, -1.8248, 0, -271.657)
