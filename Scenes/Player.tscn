@@ -18,5 +18,6 @@ mesh = SubResource("SphereMesh_baf0a")
 shape = SubResource("BoxShape3D_fykuo")
 
 [node name="HitTimer" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
