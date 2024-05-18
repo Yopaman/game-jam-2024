@@ -1,33 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://dg1wor2lirncs"]
+[gd_scene load_steps=8 format=3 uid="uid://dg1wor2lirncs"]
 
 [ext_resource type="Script" path="res://Scripts/Caillou.gd" id="1_imjoq"]
 [ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
 [ext_resource type="Texture2D" uid="uid://bo4th2oq72i8m" path="res://Textures/caillou1.png" id="2_16ou7"]
-[ext_resource type="Texture2D" uid="uid://ejy6svpmtwwu" path="res://Textures/Caillou.png" id="4_7h3cg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_00ysg"]
-atlas = ExtResource("4_7h3cg")
-region = Rect2(0, 0, 1666, 3000)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hed1"]
-atlas = ExtResource("4_7h3cg")
-region = Rect2(1666, 0, 1666, 3000)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pibo6"]
-atlas = ExtResource("4_7h3cg")
-region = Rect2(3332, 0, 1666, 3000)
+[ext_resource type="Texture2D" uid="uid://dbk3nqdllwmyy" path="res://Textures/caillou_1_1.png" id="4_ajw0v"]
+[ext_resource type="Texture2D" uid="uid://duhrkhknmo3bd" path="res://Textures/caillou_1_2.png" id="5_8knqr"]
+[ext_resource type="Texture2D" uid="uid://v776m4cm46k1" path="res://Textures/caillou_1_3.png" id="6_7ktxv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vvycb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_00ysg")
+"texture": ExtResource("4_ajw0v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7hed1")
+"texture": ExtResource("5_8knqr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pibo6")
+"texture": ExtResource("6_7ktxv")
 }],
 "loop": true,
 "name": &"default",
@@ -49,4 +39,4 @@ texture = ExtResource("2_16ou7")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="ObstacleArea"]
 transform = Transform3D(0.0887966, 0, 0, 0, 0.0887966, 0, 0, 0, 0.0887966, 0, -0.18, 0)
 sprite_frames = SubResource("SpriteFrames_vvycb")
-frame_progress = 0.730311
+frame_progress = 0.961122
