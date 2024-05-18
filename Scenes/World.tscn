@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_0rswd"]
 [ext_resource type="PackedScene" uid="uid://bwdwkapawj3qg" path="res://Scenes/Player.tscn" id="1_b5bxb"]
-[ext_resource type="Material" uid="uid://bfnn30nyyiiae" path="res://Shaders/water.tres" id="1_hiyjm"]
+[ext_resource type="Material" uid="uid://dn3djh7xtflab" path="res://Shaders/water.tres" id="1_hiyjm"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_tlih8"]
 [ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://Scenes/Obstacle/Caillou.tscn" id="3_h8t28"]
 [ext_resource type="PackedScene" uid="uid://dr0sk2g6ci8ds" path="res://Scenes/Obstacle/Arbre.tscn" id="4_voo23"]
@@ -21,7 +21,7 @@ material = SubResource("StandardMaterial3D_0q4da")
 
 [sub_resource type="BoxMesh" id="BoxMesh_uykv1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g3cxt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_td725"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("6_4ce7y")
@@ -56,7 +56,7 @@ _surfaces = [{
 "format": 34359742495,
 "index_count": 12,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 5, 0, 4, 0),
-"material": SubResource("ShaderMaterial_g3cxt"),
+"material": SubResource("ShaderMaterial_td725"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
@@ -75,56 +75,33 @@ size = Vector3(0.975, 0.8, 1.11)
 [node name="Game" type="Node3D"]
 script = ExtResource("1_0rswd")
 
-[node name="water" type="MeshInstance3D" parent="."]
+[node name="Monde" type="Node" parent="."]
+
+[node name="water" type="MeshInstance3D" parent="Monde"]
 transform = Transform3D(6.20118, 0, 0, 0, 1.73811, 0, 0, 0, 34.0817, 1.542, -0.07, -12.733)
 transparency = 0.8
 mesh = SubResource("PlaneMesh_dx1hv")
+skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("1_hiyjm")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.956753, 0.128936, 0.260768, 0, -0.896409, 0.443228, 0.290903, -0.42406, -0.857642, 23.0544, 11.7762, -69.8828)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Monde"]
+transform = Transform3D(0.956753, 0.128936, 0.260768, 0, -0.896409, 0.443228, 0.290903, -0.42406, -0.857641, 23.0544, 11.7762, -69.8828)
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("1_b5bxb")]
+[node name="Player" parent="Monde" groups=["player"] instance=ExtResource("1_b5bxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269914, 5.08274, 9.62532)
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(0.999999, 0.00174533, -1.8131e-09, -0.00144181, 0.826097, 0.563526, 0.000983539, -0.563525, 0.826098, 0, 3.238, 14.4231)
+[node name="Camera3D" type="Camera3D" parent="Monde" node_paths=PackedStringArray("player")]
+transform = Transform3D(0.999999, 0.00174533, -2.64286e-09, -0.00144181, 0.826097, 0.563526, 0.000983539, -0.563525, 0.826098, 0, 3.238, 14.4231)
 current = true
 script = ExtResource("1_tlih8")
 player = NodePath("../Player")
 
-[node name="Node3D" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32.8351)
-
-[node name="Node3D2" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.53962)
-
-[node name="Node3D4" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -11.291)
-
-[node name="Node3D5" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.0041)
-
-[node name="Node3D7" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -18.335)
-
-[node name="Node3D8" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -8.051)
-
-[node name="Node3D9" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -8)
-
-[node name="Node3D10" parent="." instance=ExtResource("3_h8t28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.2948)
-
-[node name="Arbre" parent="." instance=ExtResource("4_voo23")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48766, -0.0339565, -12.3812)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Monde"]
 transform = Transform3D(13.7, 0, 0, 0, 1.70651, 0, 0, 0, 98.6319, -11.3416, 0.025856, 0)
 mesh = SubResource("BoxMesh_uykv1")
+skeleton = NodePath("../..")
 
-[node name="SimpleGrassTextured" type="MultiMeshInstance3D" parent="MeshInstance3D"]
+[node name="SimpleGrassTextured" type="MultiMeshInstance3D" parent="Monde/MeshInstance3D"]
 transform = Transform3D(0.0729927, 0, 0, 0, 0.58599, 0, 0, 0, 0.0101387, 0.827855, -0.0151514, 0)
 multimesh = SubResource("MultiMesh_mkfar")
 script = ExtResource("8_r3bwc")
@@ -138,16 +115,46 @@ sgt_dist_min = 0.25
 sgt_follow_normal = false
 metadata/SimpleGrassTextured = "2.0.3"
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Monde/MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016, -1.423, 0.01)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monde/MeshInstance3D/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.445, -0.015)
 shape = SubResource("BoxShape3D_ci38r")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Monde"]
 transform = Transform3D(1, 0, 0, 0, 1.70651, 0, 0, 0, 98.6319, 8.12508, 0.0779028, -0.0243816)
 mesh = SubResource("BoxMesh_uykv1")
+skeleton = NodePath("../..")
 
-[node name="Ours" parent="." instance=ExtResource("5_8rtyn")]
+[node name="Obstacles" type="Node" parent="Monde"]
+
+[node name="Ours" parent="Monde/Obstacles" instance=ExtResource("5_8rtyn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.90088, 0.972118, -19.3427)
+
+[node name="Node3D" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32.8351)
+
+[node name="Node3D2" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.53962)
+
+[node name="Node3D4" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -11.291)
+
+[node name="Node3D5" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.0041)
+
+[node name="Node3D7" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -18.335)
+
+[node name="Node3D8" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -8.051)
+
+[node name="Node3D9" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -8)
+
+[node name="Node3D10" parent="Monde/Obstacles" instance=ExtResource("3_h8t28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.2948)
+
+[node name="Arbre" parent="Monde/Obstacles" instance=ExtResource("4_voo23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.48766, -0.0339565, -12.3812)
