@@ -43,7 +43,6 @@ func _physics_process(delta):
 	if depth > 0:
 		submerged = true
 		apply_central_force(Vector3.UP * float_force * gravity * depth)
-	print(depth)
 	if diving:
 		linear_velocity.y = 0.0
 		apply_central_force(Vector3.DOWN * dive_force)
