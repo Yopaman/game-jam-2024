@@ -79,4 +79,4 @@ func _on_hit_timer_timeout():
 	is_hit = false
 	
 func game_over():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")

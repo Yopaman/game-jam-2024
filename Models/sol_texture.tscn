@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=3 uid="uid://d36bb8mindaob"]
+
+[ext_resource type="PackedScene" uid="uid://cjb2e83ueeljf" path="res://Models/sol.glb" id="1_sv046"]
+[ext_resource type="Texture2D" uid="uid://sdirrabi55v7" path="res://Textures/terre/Concrete_Muddy_001_BaseColor.jpg" id="2_v3c5y"]
+[ext_resource type="Texture2D" uid="uid://dr5mh0d82h2nh" path="res://Textures/terre/Concrete_Muddy_001_AmbientOcclusion.jpg" id="3_3rulb"]
+[ext_resource type="Texture2D" uid="uid://c125n7q5plf7o" path="res://Textures/terre/Concrete_Muddy_001_Height.png" id="4_72qhl"]
+[ext_resource type="Texture2D" uid="uid://dqhrp371np0yu" path="res://Textures/terre/Concrete_Muddy_001_Normal.jpg" id="5_nh8y3"]
+[ext_resource type="Texture2D" uid="uid://cj21w2eima6pe" path="res://Textures/terre/Concrete_Muddy_001_Roughness.jpg" id="6_0b6kc"]
+[ext_resource type="Shader" path="res://addons/simplegrasstextured/shaders/grass.gdshader" id="7_20pxt"]
+[ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="8_cl1ev"]
+[ext_resource type="Script" path="res://addons/simplegrasstextured/grass.gd" id="9_xrbk6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pria"]
+albedo_texture = ExtResource("2_v3c5y")
+roughness_texture = ExtResource("6_0b6kc")
+normal_enabled = true
+normal_texture = ExtResource("5_nh8y3")
+ao_enabled = true
+ao_texture = ExtResource("3_3rulb")
+heightmap_enabled = true
+heightmap_texture = ExtResource("4_72qhl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_317om"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_20pxt")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_frames = Vector2(1, 1)
+shader_parameter/light_mode = 1
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/normal_scale = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/roughness = 1.0
+shader_parameter/roughness_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.5
+shader_parameter/scale_h = 1.0
+shader_parameter/scale_w = 1.0
+shader_parameter/scale_var = -0.25
+shader_parameter/grass_strength = 0.55
+shader_parameter/optimization_by_distance = false
+shader_parameter/optimization_level = 7.0
+shader_parameter/optimization_dist_min = 10.0
+shader_parameter/optimization_dist_max = 50.0
+shader_parameter/grass_size_y = 1.0
+shader_parameter/interactive_mode = true
+shader_parameter/interactive_level_xz = 3.0
+shader_parameter/interactive_level_y = 0.3
+shader_parameter/texture_albedo = ExtResource("8_cl1ev")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lr7yi"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1.00001, 1),
+"attribute_data": PackedByteArray(255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 128, 63, 255, 0, 0, 255, 0, 0, 128, 63, 0, 0, 0, 0, 255, 0, 0, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 255, 0, 0, 0, 0, 0, 0, 128, 63, 255, 0, 0, 255, 0, 0, 128, 63, 0, 0, 0, 0),
+"format": 34359742495,
+"index_count": 12,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 5, 0, 4, 0),
+"material": SubResource("ShaderMaterial_317om"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 191, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 63, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191)
+}]
+
+[sub_resource type="MultiMesh" id="MultiMesh_amswe"]
+transform_format = 1
+mesh = SubResource("ArrayMesh_lr7yi")
+
+[node name="sol2" instance=ExtResource("1_sv046")]
+
+[node name="sol" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7pria")
+
+[node name="SimpleGrassTextured" type="MultiMeshInstance3D" parent="." index="1"]
+multimesh = SubResource("MultiMesh_amswe")
+script = ExtResource("9_xrbk6")
+texture_albedo = ExtResource("8_cl1ev")
+sgt_radius = 2.0
+sgt_density = 25
+sgt_scale = 1.0
+sgt_rotation = 0.0
+sgt_rotation_rand = 1.0
+sgt_dist_min = 0.25
+sgt_follow_normal = false
+metadata/SimpleGrassTextured = "2.0.3"

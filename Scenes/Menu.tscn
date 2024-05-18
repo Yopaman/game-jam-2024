@@ -1,13 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://cf6xvi5cxsj2k"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_hlhg1"]
-[ext_resource type="PackedScene" uid="uid://cah26diafl4qj" path="res://Models/saumon.tscn" id="2_aobj7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cxsnc"]
 font_size = 36
 
 [sub_resource type="LabelSettings" id="LabelSettings_3gn0w"]
 font_size = 71
+
+[sub_resource type="LabelSettings" id="LabelSettings_rc15m"]
+font_size = 40
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -17,9 +19,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hlhg1")
-
-[node name="saumon_v03_hi" parent="." instance=ExtResource("2_aobj7")]
-transform = Transform3D(0.195, 0, 0, 0, 0.195, 0, 0, 0, 0.357, 0, 0, 0)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -38,5 +37,17 @@ offset_right = 1149.0
 offset_bottom = 237.0
 text = "SAUMON SIMULATOR HD™"
 label_settings = SubResource("LabelSettings_3gn0w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 229.0
+offset_right = 1044.0
+offset_bottom = 408.0
+text = "Gauche / Droite : se déplacer
+Bas : plonger"
+label_settings = SubResource("LabelSettings_rc15m")
 horizontal_alignment = 1
 vertical_alignment = 1
