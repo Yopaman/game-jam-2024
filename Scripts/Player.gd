@@ -64,9 +64,7 @@ func on_Obstacle_hit():
 	speed = hit_speed
 	is_hit = true
 	$HitTimer.start()
-	
 
-		
 func switch_lane(dir):
 	lane_index += dir
 	if lane_index > 3:
@@ -75,7 +73,6 @@ func switch_lane(dir):
 		lane_index = 0
 
 func _on_hit_timer_timeout():
-	
 	speed = normal_speed
 	is_hit = false
 	
