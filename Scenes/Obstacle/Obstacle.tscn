@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" path="res://Scripts/Obstacle.gd" id="1_n3105"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_lqe02"]
-radius = 0.7
+[sub_resource type="BoxShape3D" id="BoxShape3D_skc7b"]
 
-[node name="ObstacleArea" type="Area3D"]
+[node name="Obstacle" type="Node3D"]
 script = ExtResource("1_n3105")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_lqe02")
+[node name="Zone_Collision" type="Area3D" parent="."]
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Zone_Collision"]
+shape = SubResource("BoxShape3D_skc7b")
+
+[connection signal="body_entered" from="Zone_Collision" to="." method="_on_zone_collision_body_entered"]

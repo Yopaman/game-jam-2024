@@ -1,7 +1,5 @@
-extends Node3D
+extends "res://Scripts/Obstacle.gd"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	var nbr := randi() % 20
 	if nbr < 2:
@@ -11,3 +9,7 @@ func _ready():
 
 func attack():
 	$AnimatedSprite3D.play("attack")
+
+func _on_zone_collision_body_entered(body):
+	super._on_zone_collision_body_entered(body)
+	attack()

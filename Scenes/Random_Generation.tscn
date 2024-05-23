@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://pfa8iix8qeuc"]
+
+[ext_resource type="Material" uid="uid://bfnn30nyyiiae" path="res://Shaders/water.tres" id="1_u3puq"]
+[ext_resource type="PackedScene" uid="uid://dg1wor2lirncs" path="res://Scenes/Obstacle/Caillou.tscn" id="2_7b8v8"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bbc5v"]
+lightmap_size_hint = Vector2i(2510, 15010)
+material = ExtResource("1_u3puq")
+uv2_padding = 10.0
+size = Vector2(500, 3000)
+
+[node name="RandomGeneration" type="Node3D"]
+
+[node name="water" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.471633, 0, 0, 0, 1.00348, 0, 0, 0, 1.00348, 0, 0, 0)
+transparency = 0.79
+mesh = SubResource("PlaneMesh_bbc5v")
+
+[node name="Caillou" parent="." instance=ExtResource("2_7b8v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8382, 0, -1.93292)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.891853, 0.452326, 0, -0.452326, 0.891853, 6.97687, 165.143, 318.337)

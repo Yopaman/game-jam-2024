@@ -1,12 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://dg1wor2lirncs"]
 
-[ext_resource type="Script" path="res://Scripts/Caillou.gd" id="1_imjoq"]
-[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
+[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://Scenes/Obstacle/Obstacle.tscn" id="1_jid1t"]
 [ext_resource type="Texture2D" uid="uid://dbk3nqdllwmyy" path="res://Textures/caillou_1_1.png" id="4_ajw0v"]
 [ext_resource type="Texture2D" uid="uid://duhrkhknmo3bd" path="res://Textures/caillou_1_2.png" id="5_8knqr"]
 [ext_resource type="Texture2D" uid="uid://v776m4cm46k1" path="res://Textures/caillou_1_3.png" id="6_7ktxv"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vvycb"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jxinp"]
+size = Vector3(13.0488, 15.4508, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldjrn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -23,14 +25,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node3D" type="Node3D"]
-transform = Transform3D(0.363733, 0, 0, 0, 0.363733, 0, 0, 0, 0.363733, 0, 0, 0)
-script = ExtResource("1_imjoq")
+[node name="Caillou" instance=ExtResource("1_jid1t")]
 
-[node name="ObstacleArea" parent="." instance=ExtResource("1_jid1t")]
+[node name="CollisionShape3D" parent="Zone_Collision" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19628, 2.26203, 0)
+shape = SubResource("BoxShape3D_jxinp")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="ObstacleArea"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.18, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18, 0)
 billboard = 1
-sprite_frames = SubResource("SpriteFrames_vvycb")
-frame_progress = 0.961122
+sprite_frames = SubResource("SpriteFrames_ldjrn")
+autoplay = "default"

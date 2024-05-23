@@ -70,6 +70,7 @@ func on_Obstacle_hit():
 		game_over()
 	speed = hit_speed
 	is_hit = true
+	$saumon_v03_hi2/Mesh.get_active_material(0).albedo_color = Color(1, 0, 0)
 	$HitTimer.start()
 
 func switch_lane(dir):

@@ -1,10 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://b2g8trjiefa5j"]
+[gd_scene load_steps=22 format=3 uid="uid://b2g8trjiefa5j"]
 
-[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://scenes/Obstacle/Obstacle.tscn" id="1_83830"]
+[ext_resource type="PackedScene" uid="uid://d3ygqpejryuyd" path="res://Scenes/Obstacle/Obstacle.tscn" id="1_83830"]
 [ext_resource type="Script" path="res://Scripts/Ours.gd" id="1_qynga"]
 [ext_resource type="Texture2D" uid="uid://cp7xykc22dxo" path="res://Textures/ours.png" id="2_eylg7"]
 [ext_resource type="Texture2D" uid="uid://dshesh5i4lax" path="res://Textures/ours_attack.png" id="4_dt07r"]
 [ext_resource type="Texture2D" uid="uid://dffy6amlxe8bv" path="res://Textures/ours_bleu.png" id="4_g0v6i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mi7pq"]
+size = Vector3(9.94226, 10.13, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ipqe"]
 atlas = ExtResource("4_g0v6i")
@@ -58,7 +61,7 @@ region = Rect2(96, 192, 96, 96)
 atlas = ExtResource("4_g0v6i")
 region = Rect2(192, 192, 96, 96)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wbnc7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvleg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -105,7 +108,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qvgen"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5bgx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -124,21 +127,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Ours" type="Node3D" groups=["ours"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0796939, -0.0729882, 0.0265737)
+[node name="Ours" instance=ExtResource("1_83830")]
 script = ExtResource("1_qynga")
 
-[node name="ObstacleArea" parent="." instance=ExtResource("1_83830")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.873, 0, 1.57)
+[node name="CollisionShape3D" parent="Zone_Collision" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34137, 0, 0)
+shape = SubResource("BoxShape3D_mi7pq")
 
-[node name="ours_bleu" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(4.805, 0, 0, 0, 4.805, 0, 0, 0, 4.805, 0, 1.79904, 0)
+[node name="ours_bleu" type="AnimatedSprite3D" parent="." index="1"]
+transform = Transform3D(30.205, 0, 0, 0, 30.205, 0, 0, 0, 30.205, 16.8777, 21.7579, 0)
 visible = false
 billboard = 1
-sprite_frames = SubResource("SpriteFrames_wbnc7")
+sprite_frames = SubResource("SpriteFrames_jvleg")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.012, 0, 1.818, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.12, 17.6539, 19.2302, 0)
 billboard = 1
-sprite_frames = SubResource("SpriteFrames_qvgen")
+sprite_frames = SubResource("SpriteFrames_d5bgx")
 animation = &"idle"
