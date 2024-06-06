@@ -2,6 +2,7 @@
 
 - [ ] Niveaux
   - [ ] zone début : freeroam/tuto
-- [ ]  Eau
+- [ ]  fx/shader
   - [ ] Splash effects
   - [ ] Eau qui change de couleur selon le niveau
+  - [ ] arc en ciel omg
