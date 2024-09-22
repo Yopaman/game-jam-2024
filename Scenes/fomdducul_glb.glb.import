@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cf0c06iwxrhhg"
-path="res://.godot/imported/fomdducul_glb.glb-1e131d65f7a397303c0bf3cbaaaa8ff9.scn"
+path="res://.godot/imported/fomdducul_glb.glb-2e9c97d84c6a2f62568500f210d91128.scn"
 
 [deps]
 
-source_file="res://scenes/fomdducul_glb.glb"
-dest_files=["res://.godot/imported/fomdducul_glb.glb-1e131d65f7a397303c0bf3cbaaaa8ff9.scn"]
+source_file="res://Scenes/fomdducul_glb.glb"
+dest_files=["res://.godot/imported/fomdducul_glb.glb-2e9c97d84c6a2f62568500f210d91128.scn"]
 
 [params]
 

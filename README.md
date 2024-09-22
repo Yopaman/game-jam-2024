@@ -1,6 +1,12 @@
 ## todo
 
-- [ ] Niveaux
+- [ ] Système de Zones/Niveaux:
+  - [ ] vitesse spécifique à chaque zone
+  - [ ] obstacles
+  - [ ] couleur Eau
+  - [ ] couleur ciel 
+  - [ ] musique ?
+  
   - [ ] zone début : freeroam/tuto
 - [ ]  fx/shader
   - [ ] Splash effects

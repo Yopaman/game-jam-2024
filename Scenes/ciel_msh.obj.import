@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://btwagvf60xgop"
-path="res://.godot/imported/ciel_msh.obj-f6843516dea527947d7aae9205ecb06f.mesh"
+path="res://.godot/imported/ciel_msh.obj-e355db501fb6dbe08dcf2dea458726d5.mesh"
 
 [deps]
 
-files=["res://.godot/imported/ciel_msh.obj-f6843516dea527947d7aae9205ecb06f.mesh"]
+files=["res://.godot/imported/ciel_msh.obj-e355db501fb6dbe08dcf2dea458726d5.mesh"]
 
-source_file="res://scenes/ciel_msh.obj"
-dest_files=["res://.godot/imported/ciel_msh.obj-f6843516dea527947d7aae9205ecb06f.mesh", "res://.godot/imported/ciel_msh.obj-f6843516dea527947d7aae9205ecb06f.mesh"]
+source_file="res://Scenes/ciel_msh.obj"
+dest_files=["res://.godot/imported/ciel_msh.obj-e355db501fb6dbe08dcf2dea458726d5.mesh", "res://.godot/imported/ciel_msh.obj-e355db501fb6dbe08dcf2dea458726d5.mesh"]
 
 [params]
 
