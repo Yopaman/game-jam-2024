@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmppi7xcocwm2"]
+
+[ext_resource type="PackedScene" uid="uid://74to1kvkn0ne" path="res://Textures/transition.glb" id="1_y55ap"]
+[ext_resource type="Texture2D" uid="uid://sdirrabi55v7" path="res://Textures/terre/Concrete_Muddy_001_BaseColor.jpg" id="2_t73v8"]
+[ext_resource type="Texture2D" uid="uid://dr5mh0d82h2nh" path="res://Textures/terre/Concrete_Muddy_001_AmbientOcclusion.jpg" id="3_gpx1h"]
+[ext_resource type="Texture2D" uid="uid://c125n7q5plf7o" path="res://Textures/terre/Concrete_Muddy_001_Height.png" id="4_d7wxg"]
+[ext_resource type="Texture2D" uid="uid://cj21w2eima6pe" path="res://Textures/terre/Concrete_Muddy_001_Roughness.jpg" id="5_bk126"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lupb7"]
+albedo_texture = ExtResource("2_t73v8")
+roughness_texture = ExtResource("5_bk126")
+ao_enabled = true
+ao_texture = ExtResource("3_gpx1h")
+heightmap_enabled = true
+heightmap_texture = ExtResource("4_d7wxg")
+
+[node name="transition" instance=ExtResource("1_y55ap")]
+
+[node name="sol_terre3" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lupb7")

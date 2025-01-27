@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=3 uid="uid://bb830xwcsk6je"]
+
+[ext_resource type="PackedScene" uid="uid://dpk2aqua2s1tf" path="res://Textures/montagne.glb" id="1_an8um"]
+[ext_resource type="Texture2D" uid="uid://sdirrabi55v7" path="res://Textures/terre/Concrete_Muddy_001_BaseColor.jpg" id="2_jeaa3"]
+[ext_resource type="Texture2D" uid="uid://dr5mh0d82h2nh" path="res://Textures/terre/Concrete_Muddy_001_AmbientOcclusion.jpg" id="3_eb0eo"]
+[ext_resource type="Texture2D" uid="uid://c125n7q5plf7o" path="res://Textures/terre/Concrete_Muddy_001_Height.png" id="4_5x3tm"]
+[ext_resource type="Texture2D" uid="uid://dqhrp371np0yu" path="res://Textures/terre/Concrete_Muddy_001_Normal.jpg" id="5_r3bbb"]
+[ext_resource type="Texture2D" uid="uid://cj21w2eima6pe" path="res://Textures/terre/Concrete_Muddy_001_Roughness.jpg" id="6_q12nt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0a06"]
+albedo_texture = ExtResource("2_jeaa3")
+roughness_texture = ExtResource("6_q12nt")
+normal_enabled = true
+normal_texture = ExtResource("5_r3bbb")
+ao_enabled = true
+ao_texture = ExtResource("3_eb0eo")
+heightmap_enabled = true
+heightmap_texture = ExtResource("4_5x3tm")
+
+[node name="montagne" instance=ExtResource("1_an8um")]
+
+[node name="polySurface5" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_i0a06")
